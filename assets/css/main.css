@@ -297,13 +297,18 @@ header {
 .hobby {
     display: flex;
     margin-bottom: 60px;
-    width: 90%;
+    /*width: 90%;*/
 }
 
-.hobby img, .hobby video { width: 320px; }
+.hobby img, .hobby video {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    max-height: 200px;
+}
 
 .hobby-text {
-    width: 60%;
+    width: 50%;
     margin-left: 50px;
 }
 
