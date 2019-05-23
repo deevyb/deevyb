@@ -212,8 +212,6 @@ header {
     margin-bottom: 30px;
 }
 
-.row a { text-decoration: unset; }
-
 .experience h2, .projects h2 {
     align-self: flex-start;
     margin-bottom: 50px;
@@ -370,6 +368,7 @@ header {
 
     .social img { width: 27px; height: auto; }
     .about-info, .hobby-text { margin: 20px 0px 0px 0px; }
+    .about-info p, .hobby-text p { width: 100% }
     .about-info-bottom { flex-direction: column; }
     .resume { margin-bottom: 10px; }
 
