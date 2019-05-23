@@ -66,7 +66,7 @@ header {
 .pages {
     display: flex;
     justify-content: space-around;
-    width: 300px;
+    width: 30%;
 }
 
 .pages a, header a {
@@ -145,7 +145,7 @@ header {
 
 .about-info p, .resume { font-size: 17px; }
 
-.about-me img {
+.me-pic {
     height: 500px;
     border-radius: 6px;
 }
@@ -192,7 +192,6 @@ header {
 .social img {
     width: 27px;
     height: auto;
-    transition: 0.15s;
 }
 
 /* -------------------- EXPERIENCE -------------------- */
@@ -334,3 +333,49 @@ header {
 .numbers h5 { font-size: 17px; }
 .numbers h1 { font-size: 70px; }
 .numbers div { text-align: center; }
+
+/* -------------------- MEDIA QUERIES -------------------- */
+/* Phone */
+@media (max-width: 650px) {
+    header, .main-header, .about-me, .experience, #connect, .projects, .hobbies, .stats {
+        width: 90vw;
+        margin: 0px auto;
+    }
+
+    /* Nav Bar */
+    header { margin-top: 5%; }
+    h1 { font-size: 30px; }
+    .pages { width: 250px; }
+
+    .side-square { display: none; }
+
+    /* Header */
+    h2 { font-size: 30px; }
+    h3 { font-size: 25px; }
+
+    .about-me, .row, .hobby, .numbers {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 0px;
+    }
+
+    .me-pic {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .social img { width: 27px; height: auto; }
+    .about-info, .hobby-text { margin: 20px 0px 0px 0px; }
+    .about-info-bottom { flex-direction: column; }
+    .resume { margin-bottom: 10px; }
+
+    .experience, #connect, .hobbies { margin-top: 50px; }
+    .card-home, .card, .hobby, .numbers div { margin-bottom: 30px; }
+
+    /* Connect */
+    #connect { margin-bottom: 50px; }
+}
