@@ -297,7 +297,6 @@ header {
 .hobby {
     display: flex;
     margin-bottom: 60px;
-    /*width: 90%;*/
 }
 
 .hobby img, .hobby video {
