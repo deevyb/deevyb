@@ -6,6 +6,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="favicon.ico" />
 
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110480801-2"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-110480801-2');
+	</script>
+
 	<!-- CSS Files -->
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -119,11 +129,8 @@
 	</section>
 
 	<!-- AOS -->
-	<script>
-		AOS.init({
-			duration: 800,
-			once: true
-		});
-	</script>
+	<script>AOS.init({ duration: 800, once: true });</script>
+	<!-- Instant Page -->
+	<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
 </body>
 </html>
