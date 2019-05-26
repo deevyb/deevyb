@@ -65,8 +65,8 @@ header {
 
 .pages {
     display: flex;
-    justify-content: space-around;
-    width: 30%;
+    justify-content: space-between;
+    width: 250px;
 }
 
 .pages a, header a {
@@ -230,7 +230,7 @@ header {
 }
 
 .card h6 { color: var(--grey); }
-.card img {
+.card img, [class="card-home"] img {
     width: 320px;
     border-radius: 6px;
     margin-bottom: 10px;
@@ -342,8 +342,9 @@ header {
 
     /* Nav Bar */
     header { margin-top: 5%; }
+    .pages { width: 200px; }
+    .pages a { font-size: 14px; }
     h1 { font-size: 30px; }
-    .pages { width: 250px; }
 
     .side-square { display: none; }
 
@@ -372,9 +373,22 @@ header {
     .resume { margin-bottom: 10px; }
     .hobby-text { width: 70%; }
 
-    .experience, #connect, .hobbies { margin-top: 50px; }
+    .experience, #connect, .hobbies, .stats { margin-top: 50px; }
     .card-home, .card, .hobby, .numbers div { margin-bottom: 30px; }
+    .numbers h1 { font-size: 60px; }
 
     /* Connect */
     #connect { margin-bottom: 50px; }
+}
+
+/* Tablet - Landscape */
+@media (device-width: 1024px) and (orientation: landscape) {
+    .me-pic { height: 380px; }
+    .card img, [class="card-home"] img, .card p { width: 260px; }
+    h5 { font-size: 20px; }
+    h6 { font-size: 17px; }
+    .connect-text p, .connect-text h4 { font-size: 20px; }
+    .hobby-text h5 { margin-bottom: 5px; }
+    .numbers h5 { font-size: 17px; }
+    .numbers h1 { font-size: 60px; }
 }
