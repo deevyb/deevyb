@@ -229,17 +229,21 @@ header {
     box-shadow: 0 20px 30px rgba(36,50,66,0.15);
 }
 
+.card { overflow: hidden; }
 .card h6 { color: var(--grey); }
 .card img, [class="card-home"] img {
     width: 320px;
     border-radius: 6px;
     margin-bottom: 10px;
+    transition: transform .5s ease;
 }
 .card p {
     width: 320px;
     margin-top: 10px;
     font-size: 17px;
 }
+
+.card img:hover {  transform: scale(1.1); }
 
 .see-more {
     text-decoration: none;
