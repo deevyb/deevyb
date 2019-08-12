@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 	// FACTS
 	var sleep = -314;
-	var motor = 5063;
+	var motor = 6063;
 	var coffee = 573;
 
 	var sleepAnim = new CountUp("sleep-num", 0, sleep);
