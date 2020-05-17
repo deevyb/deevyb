@@ -50,7 +50,7 @@ p, a {
     color: var(--black);
 }
 
-header, .main-header, .about-me, .experience, #connect, .projects, .hobbies, .stats {
+header, .main-header, .about-me, .experience, #connect, .stats, .listening {
     width: 65%;
     margin: 0px auto;
 }
@@ -150,6 +150,13 @@ header {
     border-radius: 6px;
 }
 
+.me-pic2 {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 .about-info-bottom {
     display: flex;
     justify-content: space-between;
@@ -195,24 +202,22 @@ header {
 }
 
 /* -------------------- EXPERIENCE -------------------- */
-.experience, .projects {
+.experience {
     margin-top: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.projects { margin-bottom: 150px; }
-
 .row {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     width: 100%;
     margin-bottom: 30px;
 }
 
-.experience h2, .projects h2 {
+.experience h2 {
     align-self: flex-start;
     margin-bottom: 50px;
 }
@@ -220,30 +225,26 @@ header {
 .card-home {
     padding: 3% 3%;
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(36,50,66, 0.05);
     transition: .15s ease-in-out;
 }
 
-.card-home:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 20px 30px rgba(36,50,66,0.15);
-}
-
-.card { overflow: hidden; }
 .card h6 { color: var(--grey); }
 .card img, [class="card-home"] img {
     width: 320px;
     border-radius: 6px;
     margin-bottom: 10px;
-    transition: transform .5s ease;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.4);
 }
+
+.card-home img:hover, .card img:hover, .listening img:hover {
+    transform: scale(0.97);
+}
+
 .card p {
     width: 320px;
     margin-top: 10px;
     font-size: 17px;
 }
-
-.card img:hover {  transform: scale(1.1); }
 
 .see-more {
     text-decoration: none;
@@ -263,7 +264,6 @@ header {
     justify-content: center;
     align-items: center;
     width: 320px;
-    /*transform: translateY(-50%);*/
     cursor: pointer;
 }
 
@@ -282,38 +282,6 @@ header {
     margin-bottom: 20px;
 }
 
-/* -------------------- HOBBIES -------------------- */
-.hobbies {
-    margin-top: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.hobbies h2 {
-    align-self: flex-start;
-    margin-bottom: 50px;
-}
-
-.hobby {
-    display: flex;
-    margin-bottom: 60px;
-}
-
-.hobby img, .hobby video {
-    width: 100%;
-    max-width: 320px;
-    height: auto;
-    max-height: 200px;
-}
-
-.hobby-text {
-    width: 50%;
-    margin-left: 50px;
-}
-
-.hobby-text h5 { margin-bottom: 20px; }
-
 /* -------------------- STATS -------------------- */
 .stats {
     margin-top: 150px;
@@ -326,7 +294,7 @@ header {
 
 .numbers {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
     width: 90%;
@@ -336,10 +304,30 @@ header {
 .numbers h1 { font-size: 70px; }
 .numbers div { text-align: center; }
 
+/* -------------------- LISTENING -------------------- */
+.listening {
+    margin-top: 150px;
+}
+
+.listening-row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.listening-row img {
+    width: 250px;
+    border-radius: 6px;
+    transition: transform .3s ease;
+}
+
 /* -------------------- MEDIA QUERIES -------------------- */
 /* Phone */
 @media (max-width: 650px) {
-    header, .main-header, .about-me, .experience, #connect, .projects, .hobbies, .stats {
+    header, .main-header, .about-me, .experience, #connect, .stats {
         width: 90vw;
         margin: 0px auto;
     }
@@ -356,7 +344,7 @@ header {
     h2 { font-size: 30px; }
     h3 { font-size: 25px; }
 
-    .about-me, .row, .hobby, .numbers {
+    .about-me, .row, .numbers {
         width: 100%;
         flex-direction: column;
         align-items: center;
@@ -364,7 +352,7 @@ header {
         margin-bottom: 0px;
     }
 
-    .me-pic {
+    .me-pic, .me-pic2 {
         width: 200px;
         height: 200px;
         border-radius: 50%;
@@ -372,13 +360,12 @@ header {
     }
 
     .social img { width: 27px; height: auto; }
-    .about-info, .hobby-text { margin: 20px 0px 0px 0px; }
+    .about-info { margin: 20px 0px 0px 0px; }
     .about-info-bottom { flex-direction: column; }
     .resume { margin-bottom: 10px; }
-    .hobby-text { width: 70%; }
 
-    .experience, #connect, .hobbies, .stats { margin-top: 50px; }
-    .card-home, .card, .hobby, .numbers div { margin-bottom: 30px; }
+    .experience, #connect, .stats { margin-top: 50px; }
+    .card-home, .card, .numbers div { margin-bottom: 30px; }
     .numbers h1 { font-size: 60px; }
 
     /* Connect */
@@ -392,7 +379,6 @@ header {
     h5 { font-size: 20px; }
     h6 { font-size: 17px; }
     .connect-text p, .connect-text h4 { font-size: 20px; }
-    .hobby-text h5 { margin-bottom: 5px; }
     .numbers h5 { font-size: 17px; }
     .numbers h1 { font-size: 60px; }
 }

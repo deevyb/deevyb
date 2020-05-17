@@ -21,30 +21,37 @@
 	<script>
 		window['_fs_debug'] = false;
 		window['_fs_host'] = 'fullstory.com';
+		window['_fs_script'] = 'edge.fullstory.com/s/fs.js';
 		window['_fs_org'] = 'MVE7M';
 		window['_fs_namespace'] = 'FS';
 		(function(m,n,e,t,l,o,g,y){
 		    if (e in m) {if(m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');} return;}
 		    g=m[e]=function(a,b,s){g.q?g.q.push([a,b,s]):g._api(a,b,s);};g.q=[];
-		    o=n.createElement(t);o.async=1;o.crossOrigin='anonymous';o.src='https://'+_fs_host+'/s/fs.js';
+		    o=n.createElement(t);o.async=1;o.crossOrigin='anonymous';o.src='https://'+_fs_script;
 		    y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
 		    g.identify=function(i,v,s){g(l,{uid:i},s);if(v)g(l,v,s)};g.setUserVars=function(v,s){g(l,v,s)};g.event=function(i,v,s){g('event',{n:i,p:v},s)};
+		    g.anonymize=function(){g.identify(!!0)};
 		    g.shutdown=function(){g("rec",!1)};g.restart=function(){g("rec",!0)};
-		    g.log = function(a,b) { g("log", [a,b]) };
+		    g.log = function(a,b){g("log",[a,b])};
 		    g.consent=function(a){g("consent",!arguments.length||a)};
 		    g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
 		    g.clearUserCookie=function(){};
+		    g._w={};y='XMLHttpRequest';g._w[y]=m[y];y='fetch';g._w[y]=m[y];
+		    if(m[y])m[y]=function(){return g._w[y].apply(this,arguments)};
+		    g._v="1.2.0";
 		})(window,document,window['_fs_namespace'],'script','user');
 	</script>
 
 	<!-- CSS Files -->
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+	<!-- <link rel="stylesheet" type="text/css" href="assets/css/dark.css"> -->
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 	<!-- JavaScript Files -->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   	<script src="https://cdn.jsdelivr.net/npm/typeit@5.10.7/dist/typeit.min.js"></script>
   	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  	<script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
   	<script type="text/javascript" src="assets/js/home.js"></script>
   	<script type="text/javascript" src="assets/js/script.js"></script>
 </head>
@@ -77,17 +84,17 @@
 		<div class="about-info">
 			<h4>Hi, I'm Deevy.</h4>
 			<p>
-				I’m a junior at <strong>UC Berkeley</strong> studying <strong>Data Science</strong> with a certification in Entrepreneurship & Technology. <br> <br>
-				I’m interested in <strong>product</strong> and <strong>data</strong>, the <strong>automotive</strong>, <strong>aviation</strong>, and <strong>VC</strong> industries; especially <strong>startups</strong>. <br> <br>
-				As a recently licensed <strong>realtor</strong>, I’m looking to dive into the <strong>real estate</strong> industry as well. DRE #02069284.
+				I’m a senior at <b>UC Berkeley</b> studying <b>Data Science</b> with a domain emphasis in <b>Urban Science</b>. <br> <br>
+				I've recently been reading more about the future of <b>cities</b>, <b>transportation</b>, and <b>retail</b>. <br> <br>
+				As a recently licensed <b>realtor</b>, I’m looking to dive into the <b>real estate</b> industry as well. DRE #02069284.
 			</p>
 			<div class="about-info-bottom">
 				<a href="assets/resume.pdf" target="_blank" class="resume">See my resume</a>
 				<div class="social">
-					<div><a href="https://www.linkedin.com/in/deevybhimani/"><img src="assets/img/linkedin.png" alt="LinkedIn"></a></div>
-					<div><a href="https://www.facebook.com/deevy.bhimani"><img src="assets/img/fb.png" alt="Facebook"></a></div>
-					<div><a href="https://www.instagram.com/deevyb/"><img src="assets/img/ig.png" alt="Instagram"></a></div>
-					<div><a href="https://twitter.com/DeevyB"><img src="assets/img/twitter.png" alt="Twitter"></a></div>
+					<div><a href="https://twitter.com/DeevyB" target="_blank"><img src="assets/img/twitter.png" alt="Twitter"></a></div>
+					<div><a href="https://www.linkedin.com/in/deevybhimani/" target="_blank"><img src="assets/img/linkedin.png" alt="LinkedIn"></a></div>
+					<div><a href="https://www.instagram.com/deevyb/" target="_blank"><img src="assets/img/ig.png" alt="Instagram"></a></div>
+					<div><a href="https://open.spotify.com/user/2vkvfitxbr75613p5myepr069?si=tLAC4UgUR7ylUofQMTdNgA" target="_blank"><img src="assets/img/spotify.png" alt="Spotify"></a></div>
 				</div>
 			</div>
 		</div>
@@ -99,26 +106,26 @@
 		<div class="row" data-aos="fade-up">
 			<div class="card-home">
 				<a href="experience.html#exp">
-					<img src="assets/img/ch.png" alt="Cal Hacks">
+					<img src="assets/img/roblox.png" alt="Roblox">
 				</a>
-				<h5>Cal Hacks</h5>
-				<h6 style="color:#85C5DF;">Director</h6>
+				<h5>Roblox</h5>
+				<h6 style="color: #000000;">Product Management Intern</h6>
 			</div>
 			<div class="card-home">
 				<a href="experience.html#exp">
-					<img src="assets/img/lsvp.png" alt="LSVP">
+					<img src="assets/img/ch.png" style="box-shadow: 0px 0px 40px rgba(133, 197, 223, 0.4);" alt="Cal Hacks">
 				</a>
-				<h5>Lightspeed Venture Partners</h5>
-				<h6 style="color:#DE7362;">Ambassador</h6>
+				<h5>Cal Hacks</h5>
+				<h6 style="color:#85C5DF;">Director</h6>
 			</div>
 		</div>
 		<div class="row" data-aos="fade-up">
 			<div class="card-home">
 				<a href="experience.html#exp">
-					<img src="assets/img/loom.png" alt="Loom">
+					<img src="assets/img/lsvp.png" style="box-shadow: 0px 0px 40px rgba(222, 115, 98, 0.4);" alt="LSVP">
 				</a>
-				<h5>Loom</h5>
-				<h6 style="color:#EB6965;">Product Management Intern</h6>
+				<h5>Lightspeed Venture Partners</h5>
+				<h6 style="color:#DE7362;">Ambassador</h6>
 			</div>
 			<a href="experience.html" class="card-home see-more">
 				<div>
@@ -136,10 +143,10 @@
 			<p>I’m always happy to chat or grab coffee – shoot me a line anywhere.</p>
 			<h4 class="email">deevy.bhimani@berkeley.edu</h4>
 			<div class="social">
-				<div><a href="https://www.linkedin.com/in/deevybhimani/"><img src="assets/img/linkedin.png" alt="LinkedIn"></a></div>
-				<div><a href="https://www.facebook.com/deevy.bhimani"><img src="assets/img/fb.png" alt="Facebook"></a></div>
-				<div><a href="https://www.instagram.com/deevyb/"><img src="assets/img/ig.png" alt="Instagram"></a></div>
-				<div><a href="https://twitter.com/DeevyB"><img src="assets/img/twitter.png" alt="Twitter"></a></div>
+				<div><a href="https://twitter.com/DeevyB" target="_blank"><img src="assets/img/twitter.png" alt="Twitter"></a></div>
+				<div><a href="https://www.linkedin.com/in/deevybhimani/" target="_blank"><img src="assets/img/linkedin.png" alt="LinkedIn"></a></div>
+				<div><a href="https://www.instagram.com/deevyb/" target="_blank"><img src="assets/img/ig.png" alt="Instagram"></a></div>
+				<div><a href="https://open.spotify.com/user/2vkvfitxbr75613p5myepr069?si=tLAC4UgUR7ylUofQMTdNgA" target="_blank"><img src="assets/img/spotify.png" alt="Spotify"></a></div>
 			</div>
 		</div>
 	</section>

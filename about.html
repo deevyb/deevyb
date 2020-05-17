@@ -20,24 +20,30 @@
 	<script>
 		window['_fs_debug'] = false;
 		window['_fs_host'] = 'fullstory.com';
+		window['_fs_script'] = 'edge.fullstory.com/s/fs.js';
 		window['_fs_org'] = 'MVE7M';
 		window['_fs_namespace'] = 'FS';
 		(function(m,n,e,t,l,o,g,y){
 		    if (e in m) {if(m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');} return;}
 		    g=m[e]=function(a,b,s){g.q?g.q.push([a,b,s]):g._api(a,b,s);};g.q=[];
-		    o=n.createElement(t);o.async=1;o.crossOrigin='anonymous';o.src='https://'+_fs_host+'/s/fs.js';
+		    o=n.createElement(t);o.async=1;o.crossOrigin='anonymous';o.src='https://'+_fs_script;
 		    y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
 		    g.identify=function(i,v,s){g(l,{uid:i},s);if(v)g(l,v,s)};g.setUserVars=function(v,s){g(l,v,s)};g.event=function(i,v,s){g('event',{n:i,p:v},s)};
+		    g.anonymize=function(){g.identify(!!0)};
 		    g.shutdown=function(){g("rec",!1)};g.restart=function(){g("rec",!0)};
-		    g.log = function(a,b) { g("log", [a,b]) };
+		    g.log = function(a,b){g("log",[a,b])};
 		    g.consent=function(a){g("consent",!arguments.length||a)};
 		    g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
 		    g.clearUserCookie=function(){};
+		    g._w={};y='XMLHttpRequest';g._w[y]=m[y];y='fetch';g._w[y]=m[y];
+		    if(m[y])m[y]=function(){return g._w[y].apply(this,arguments)};
+		    g._v="1.2.0";
 		})(window,document,window['_fs_namespace'],'script','user');
 	</script>
 
 	<!-- CSS Files -->
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+	<!-- <link rel="stylesheet" type="text/css" href="assets/css/dark.css"> -->
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 	<!-- JavaScript Files -->
@@ -69,55 +75,24 @@
 
 	<!-- ABOUT ME -->
 	<section class="about-me" data-aos="fade-up">
-		<img src="assets/img/me2.jpg" alt="me" class="me-pic">
+		<img src="assets/img/me2.jpeg" alt="me" class="me-pic2">
 		<div class="about-info">
-			<h4>Hi, I'm Deevy.</h4>
+			<h4>Deevy Bhimani</h4>
 			<p>
-				I’m a junior at <strong>UC Berkeley</strong> studying <strong>Data Science</strong> with a certification in Entrepreneurship & Technology. <br> <br>
-				I’m heavily involved in the <b>entrepreneurship</b> and <b>technology</b> ecosystem in the valley. I enjoy talking about the future of <b>transportation</b> and <b>real estate</b>, interesting applications of <b>drones</b>, fun <b>productivity</b> hacks, creative <b>design</b>, and <b>cool startups</b>. <br> <br>
-				I also love <b>extreme sports</b>, and am always looking for people to get an adrenaline rush with. &#128578;
-			</p>
-		</div>
-	</section>
+				I’m a senior at <b>UC Berkeley</b> studying <b>Data Science</b> with a domain emphasis in <b>Urban Science</b>. <br><br>
 
-	<!-- HOBBIES -->
-	<section class="hobbies">
-		<h2 data-aos="fade-up">Hobbies</h2>
-		<div class="hobby" data-aos="fade-up">
-			<img src="assets/img/riding.jpg" alt="Riding Motorcycle">
-			<div class="hobby-text">
-				<h5>Motorcycles</h5>
-				<p>I love riding my Yamaha R3 down windy roads with friends. I started riding in the summer of 2016, and it’s hand down the best decision I’ve ever made. Being on a two-wheeled machine careening across the earth at mach 1 is an absolutely irreplaceable feeling.</p>
-			</div>
-		</div>
-		<div class="hobby" data-aos="fade-up">
-			<img src="assets/img/tennis.jpg" alt="Playing Tennis">
-			<div class="hobby-text">
-				<h5>Tennis</h5>
-				<p>I've been playing tennis for over 8 years now, and every moment on the court still feels as spectacular as the first. Tennis has given me an incredible amount of happiness, friends, competitive spirit, and drive. I'll always support my two favorite players: Roger Federer and Rafael Nadal!</p>
-			</div>
-		</div>
-		<div class="hobby" data-aos="fade-up">
-			<video controls preload="metadata" poster="assets/img/video-thumbnail.png">
-				<source src="assets/img/CC_Helix.mp4" type="video/mp4">
-			</video>
-			<div class="hobby-text">
-				<h5>Drones</h5>
-				<p>It’s no secret that drone footage is often beautiful – but until you fly one yourself, they cannot be appreciate enough. Beyond drastically increasing productivity in certain industries, they’re very fun to fly and can give you a new perspective on the world. 10/10 would recommend.</p>
-			</div>
-		</div>
-		<div class="hobby" data-aos="fade-up" style="margin-bottom: 0px;">
-			<img src="assets/img/atv.jpg" alt="ATV" style="max-height: 210px;">
-			<div class="hobby-text">
-				<h5>ATVs</h5>
-				<p>My first time riding an ATV, I got stuck in the sand roughly every 5 seconds. Ever since then, I’ve improved exponentially and let my adrenaline take me speeding across the sand dunes at Pismo Beach. It’s an incredible experience, and I’m always looking forward to the next time.</p>
-			</div>
+				Over the last 2.5 years, I’ve worked at <b>startups</b> ranging from 3 to 200 people in product management, growth, data analytics, and customer success roles to name a few. <br><br>
+
+				I’m heavily involved in the <b>startup</b> ecosystem on campus. Most recently I ran <b>Cal Hacks Fellowship</b>, a startup accelerator for some of the best teams at our fall hackathon. You can read more about the teams <a href="https://medium.com/cal-hacks/cal-hacks-fellowship-6-0-teams-a6a75ee63d15" title="Cal Hacks Fellowship 6.0 Teams" target="_blank"><b>here</b></a> and see some of the curriculum I prepared and taught <a href="https://calhacks.org/fellowship" title="Cal Hacks Fellowship HQ"><b>here</b></a> (this page is a WIP). <br><br>
+
+				In my free time I’m usually listening to <b>podcasts</b>, riding around on my <b>motorcycle</b>, playing <b>tennis</b>, going down random <b>rabbit holes</b>, and feeding my new <b>Formula 1</b> obsession.
+			</p>
 		</div>
 	</section>
 
 	<!-- STATS -->
 	<section class="stats">
-		<h2 data-aos="fade-up">Fun Stats</h2>
+		<h2 data-aos="fade-up">Fun stats</h2>
 		<div class="numbers" data-aos="fade-up" data-aos-id="nums">
 			<div class="sleep">
 				<h5>Hours of Sleep</h5>
@@ -134,16 +109,43 @@
 		</div>
 	</section>
 
+	<!-- LISTENING -->
+	<section class="listening">
+		<h2 data-aos="fade-up">Some recent listening</h2>
+		<div class="listening-row" data-aos="fade-up">
+			<a href="https://open.spotify.com/playlist/4gZLv8urE8xmGGHZzKiFjl?si=1w9XQt1OTJ2lbgTfoubROA" target="_blank">
+				<img src="assets/img/smooth.png" style="box-shadow: 0px 0px 40px rgba(37, 68, 111, 0.4);" alt="Smooth">
+			</a>
+			<a href="https://open.spotify.com/playlist/2lrL3MgnNkckESrXo7jNEb?si=EmryfjMvRtOrDa71gQ6W0w" target="_blank">
+				<img src="assets/img/ww.png" style="box-shadow: 0px 0px 40px rgba(88, 47, 26, 0.4);" alt="Weekend Work">
+			</a>
+			<a href="https://fs.blog/knowledge-project/" target="_blank">
+				<img src="assets/img/fs.png" style="box-shadow: 0px 0px 40px rgba(203, 39, 40, 0.4);" alt="The Knowledge Project">
+			</a>
+		</div>
+		<div class="listening-row" data-aos="fade-up">
+			<a href="https://99percentinvisible.org/" target="_blank">
+				<img src="assets/img/99pi.png" alt="99% Invisible">
+			</a>
+			<a href="https://www.npr.org/podcasts/510289/planet-money" target="_blank">
+				<img src="assets/img/pm.png" style="box-shadow: 0px 0px 40px rgba(10, 104, 88, 0.4);" alt="Planet Money">
+			</a>
+			<a href="https://www.acquired.fm/" target="_blank">
+				<img src="assets/img/acquired.png" alt="Acquired">
+			</a>
+		</div>
+	</section>
+
 	<!-- CONNECT -->
 	<section id="connect">
 		<h2 data-aos="fade-up">Connect</h2>
 		<div class="connect-text" data-aos="fade-up">
 			<p style="margin-bottom: 20px;">Drop me a line at <b>deevy.bhimani@berkeley.edu</b>.</p>
 			<div class="social">
-				<div><a href="https://www.linkedin.com/in/deevybhimani/"><img src="assets/img/linkedin.png" alt="LinkedIn"></a></div>
-				<div><a href="https://www.facebook.com/deevy.bhimani"><img src="assets/img/fb.png" alt="Facebook"></a></div>
-				<div><a href="https://www.instagram.com/deevyb/"><img src="assets/img/ig.png" alt="Instagram"></a></div>
-				<div><a href="https://twitter.com/DeevyB"><img src="assets/img/twitter.png" alt="Twitter"></a></div>
+				<div><a href="https://twitter.com/DeevyB" target="_blank"><img src="assets/img/twitter.png" alt="Twitter"></a></div>
+				<div><a href="https://www.linkedin.com/in/deevybhimani/" target="_blank"><img src="assets/img/linkedin.png" alt="LinkedIn"></a></div>
+				<div><a href="https://www.instagram.com/deevyb/" target="_blank"><img src="assets/img/ig.png" alt="Instagram"></a></div>
+				<div><a href="https://open.spotify.com/user/2vkvfitxbr75613p5myepr069?si=tLAC4UgUR7ylUofQMTdNgA" target="_blank"><img src="assets/img/spotify.png" alt="Spotify"></a></div>
 			</div>
 		</div>
 	</section>

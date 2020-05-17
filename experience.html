@@ -20,24 +20,30 @@
 	<script>
 		window['_fs_debug'] = false;
 		window['_fs_host'] = 'fullstory.com';
+		window['_fs_script'] = 'edge.fullstory.com/s/fs.js';
 		window['_fs_org'] = 'MVE7M';
 		window['_fs_namespace'] = 'FS';
 		(function(m,n,e,t,l,o,g,y){
 		    if (e in m) {if(m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');} return;}
 		    g=m[e]=function(a,b,s){g.q?g.q.push([a,b,s]):g._api(a,b,s);};g.q=[];
-		    o=n.createElement(t);o.async=1;o.crossOrigin='anonymous';o.src='https://'+_fs_host+'/s/fs.js';
+		    o=n.createElement(t);o.async=1;o.crossOrigin='anonymous';o.src='https://'+_fs_script;
 		    y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
 		    g.identify=function(i,v,s){g(l,{uid:i},s);if(v)g(l,v,s)};g.setUserVars=function(v,s){g(l,v,s)};g.event=function(i,v,s){g('event',{n:i,p:v},s)};
+		    g.anonymize=function(){g.identify(!!0)};
 		    g.shutdown=function(){g("rec",!1)};g.restart=function(){g("rec",!0)};
-		    g.log = function(a,b) { g("log", [a,b]) };
+		    g.log = function(a,b){g("log",[a,b])};
 		    g.consent=function(a){g("consent",!arguments.length||a)};
 		    g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
 		    g.clearUserCookie=function(){};
+		    g._w={};y='XMLHttpRequest';g._w[y]=m[y];y='fetch';g._w[y]=m[y];
+		    if(m[y])m[y]=function(){return g._w[y].apply(this,arguments)};
+		    g._v="1.2.0";
 		})(window,document,window['_fs_namespace'],'script','user');
 	</script>
 
 	<!-- CSS Files -->
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+	<!-- <link rel="stylesheet" type="text/css" href="assets/css/dark.css"> -->
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 	<!-- JavaScript Files -->
@@ -52,7 +58,7 @@
 		<nav class="pages">
 			<a href="experience.html">Experience</a>
 			<a href="about.html">About</a>
-			<a href="index.html#connect">Connect</a>
+			<a href="#connect">Connect</a>
 		</nav>
 	</header>
 
@@ -71,28 +77,48 @@
 		<div id="exp"></div>
 		<div class="row" data-aos="fade-up">
 			<div class="card">
+				<a href="https://www.roblox.com/" target="_blank">
+					<img src="assets/img/roblox.png" alt="Roblox">
+				</a>
+				<h5>Roblox</h5>
+				<h6 style="color:#000000;">Product Management Intern</h6>
+				<h6>Starting June 2020</h6>
+				<p>Will be joining the social team.</p>
+			</div>
+			<div class="card">
 				<a href="https://calhacks.io" target="_blank">
-					<img src="assets/img/ch.png" alt="Cal Hacks">
+					<img src="assets/img/ch.png" style="box-shadow: 0px 0px 40px rgba(133, 197, 223, 0.4);" alt="Cal Hacks">
 				</a>
 				<h5>Cal Hacks</h5>
 				<h6 style="color:#85C5DF;">Director</h6>
 				<h6>Feb 2019 - Present</h6>
-				<p>Organizing the world’s largest collegiate hackathon with 2400+ attendees. Working on <a href="https://calhacks.io/fellowship" target="_blank">Fellowship</a>, an initiative that helps teams turn their projects into startups over a few months. Also grinding sponsorship efforts — drop me a line at deevy@calhacks.io!</p>
+				<p>Organizing the world’s largest collegiate hackathon. Running <a href="https://calhacks.io/fellowship" target="_blank">Fellowship</a>, an initiative that helps teams turn their projects into startups over a few months. Also leading the sponsorship team — drop me a line at deevy@calhacks.io!</p>
 			</div>
+		</div>
+		<div class="row" data-aos="fade-up">
 			<div class="card">
 				<a href="https://lsvp.com" target="_blank">
-					<img src="assets/img/lsvp.png" alt="LSVP">
+					<img src="assets/img/lsvp.png" style="box-shadow: 0px 0px 40px rgba(222, 115, 98, 0.4);" alt="LSVP">
 				</a>
 				<h5>Lightspeed Venture Partners</h5>
 				<h6 style="color:#DE7362;">Ambassador</h6>
-				<h6>Apr 2019 - Present</h6>
+				<h6>Apr 2019 - Apr 2020</h6>
 				<p>Connecting driven teams and founders at Cal to Lightspeed; bringing Lightspeed’s team, programs, and resources to campus.<p>
+			</div>
+			<div class="card">
+				<a href="https://www.strivr.com/" target="_blank">
+					<img src="assets/img/strivr.png" style="box-shadow: 0px 0px 40px rgba(45, 62, 224, 0.4);" alt="Strivr">
+				</a>
+				<h5>Strivr</h5>
+				<h6 style="color: #2D3EE0;">Customer Success Intern</h6>
+				<h6>Sep 2019 - Jan 2020</h6>
+				<p>Built a dashboard to automate data collection and analysis for customer success managers and some of Strivr’s largest customers. Helped deploy content updates across 600+ devices all over the country.<p>
 			</div>
 		</div>
 		<div class="row" data-aos="fade-up">
 			<div class="card">
 				<a href="https://www.loom.com" target="_blank">
-					<img src="assets/img/loom.png" alt="Loom">
+					<img src="assets/img/loom.png" style="box-shadow: 0px 0px 40px rgba(235, 105, 101, 0.4);" alt="Loom">
 				</a>
 				<h5>Loom</h5>
 				<h6 style="color:#EB6965;">Product Management Intern</h6>
@@ -101,7 +127,7 @@
 			</div>
 			<div class="card">
 				<a href="https://kittyhawk.io" target="_blank">
-					<img src="assets/img/kh.png" alt="Kittyhawk">
+					<img src="assets/img/kh.png" style="box-shadow: 0px 0px 40px rgba(80, 167, 95, 0.4);" alt="Kittyhawk">
 				</a>
 				<h5>Kittyhawk</h5>
 				<h6 style="color:#50A75F;">Growth & Data Analytics Intern</h6>
@@ -109,61 +135,19 @@
 				<p>Initially worked on lead generation, effective growth marketing, and customer success. For a majority of my internship, I worked on using raw flight data to generate beautiful visualizations about drone usage all over the world.</p>
 			</div>
 		</div>
-		<div class="row" data-aos="fade-up" style="margin-bottom: 0px;">
-			<div class="card">
-				<a href="https://berkeleyhbsa.org" target="_blank">
-					<img src="assets/img/hbsa.png" alt="Haas Business School Association">
-				</a>
-				<h5>HBSA</h5>
-				<h6 style="color:#1B1752;">MBA & Alumni Relations</h6>
-				<h6>Sep 2017 - May 2019</h6>
-				<p>I worked on creating a connection between MBA and undergraduate students at UC Berkeley through a mentorship program, which I drove with powerful data insights. I used information about program participants to easily make strong pairings that can truly be fruitful. </p>
-			</div>
-			<div class="card">
-				<a href="https://fsae.berkeley.edu" target="_blank">
-					<img src="assets/img/bfr.png" alt="Berkeley Formula Racing">
-				</a>
-				<h5>BFR</h5>
-				<h6 style="color:#003262;">Business Development</h6>
-				<h6>Jan - May 2019</h6>
-				<p>I worked on a business pitch deck for our annual international competition, designing a new website and online presence, pushing sponsorship efforts, and more. </p>
-			</div>
-		</div>
 	</section>
 
-	<!-- PROJECTS -->
-	<section class="projects">
-		<h2 data-aos="fade-up">Projects</h2>
-		<div class="row" data-aos="fade-up">
-			<div class="card">
-				<img src="assets/img/bearmaps.png" alt="BearMaps">
-				<h5>BearMaps</h5>
-				<h6>April 2018</h6>
-				<p>Created an interactive map with OpenStreetMap that uses A* to give step-by-step directions. Also incorporated a predictive search for shops/locations around Berkeley using tries.</p>
-			</div>
-			<div class="card">
-				<img src="assets/img/generator.png" alt="World Generator">
-				<h5>Random World Generator</h5>
-				<h6>March 2018</h6>
-				<p>Made an engine that generates random 2D tile-based worlds. Lets two players to roam together and use interactive elements like teleportation. Games can be customized with different environments. (e.g. winter, fall, spring, etc)<p>
-			</div>
-		</div>
-		<div class="row" data-aos="fade-up" style="margin-bottom: 0px;">
-			<div class="card">
-				<a href="https://www.eventbrite.com/e/entrepreneurial-fireside-chat-vik-singh-curtis-lee-doreen-bloch-tickets-39421745502#" target="_blank">
-					<img src="assets/img/fireside.png" alt="Fireside Chat">
-				</a>
-				<h5>Entrepreneurial Panel</h5>
-				<h6>November 2017</h6>
-				<p>Organized and led a fireside chat with three fantastic entrepreneurs - Vik Singh, Curtis Lee, and Doreen Bloch - to talk about their experiences with starting, growing, and selling their companies.</p>
-			</div>
-			<div class="card">
-				<a href="http://hbsahaasdoor.weebly.com" target="_blank">
-					<img src="assets/img/haasdoor.png" alt="HaasDoor">
-				</a>
-				<h5>HBSA HaasDoor</h5>
-				<h6>September 2017</h6>
-				<p>Designed a website for the Haas Business School Association HaasDoor initiative. The site showcases profiles of successful Haas students, and allows them to present themselves to other students as well as potential employers.</p>
+	<!-- CONNECT -->
+	<section id="connect">
+		<h2 data-aos="fade-up">To name a few.</h2>
+		<div class="connect-text" data-aos="fade-up">
+			<p>Feel free to ask if you want to know more. :)</p>
+			<h4 class="email">deevy.bhimani@berkeley.edu</h4>
+			<div class="social">
+				<div><a href="https://twitter.com/DeevyB" target="_blank"><img src="assets/img/twitter.png" alt="Twitter"></a></div>
+				<div><a href="https://www.linkedin.com/in/deevybhimani/" target="_blank"><img src="assets/img/linkedin.png" alt="LinkedIn"></a></div>
+				<div><a href="https://www.instagram.com/deevyb/" target="_blank"><img src="assets/img/ig.png" alt="Instagram"></a></div>
+				<div><a href="https://open.spotify.com/user/2vkvfitxbr75613p5myepr069?si=tLAC4UgUR7ylUofQMTdNgA" target="_blank"><img src="assets/img/spotify.png" alt="Spotify"></a></div>
 			</div>
 		</div>
 	</section>
