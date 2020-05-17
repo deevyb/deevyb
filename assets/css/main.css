@@ -74,7 +74,7 @@ header {
     text-decoration: inherit;
 }
 
-.pages a:after {
+.pages a:after, .logo:after {
     content: '';
     width: 0;
     height: 2px;
@@ -85,10 +85,14 @@ header {
     transition: width .3s ease;
 }
 
-.pages a:hover:after { 
+.pages a:hover:after, .logo:hover:after { 
     width: 100%;
     left: 0;
     background: var(--black);
+}
+
+.logo:after, .logo:hover:after {
+    background: var(--blue);
 }
 
 /* -------------------- SQUARES -------------------- */
