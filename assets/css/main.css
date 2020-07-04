@@ -98,7 +98,7 @@ header {
 /* -------------------- SQUARES -------------------- */
 .side-square {
     position: fixed;
-    border: 3px solid rgba(242, 242, 242, 0.5);
+    border: 3px solid rgba(242, 242, 242, 0.8);
     width: 400px;
     height: 400px;
     z-index: -10000000;
