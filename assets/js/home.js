@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 	// Typing Animation
 	new TypeIt('#whatIAm', {
-		strings: [' an aspiring product manager.', ' a motorcycist.', ' a Formula 1 enthusiast.', ' driven.'],
+		strings: [' a product manager.', ' a motorcycist.', ' a Formula 1 fan.', ' driven.'],
 		breakLines: false,
 		nextStringDelay: 2000,
 		startDelay: 550
